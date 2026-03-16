@@ -1,0 +1,9 @@
+src/
+site/
+skills/
+*.ts
+tsconfig.json
+.gitignore
+.env
+*.skill
+ROADMAP.md

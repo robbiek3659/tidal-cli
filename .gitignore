@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+*.skill
+
+# Next.js site
+site/node_modules/
+site/.next/
+site/out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Session
+.tidal-cli/
