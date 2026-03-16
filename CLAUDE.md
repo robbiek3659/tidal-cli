@@ -62,8 +62,34 @@ Tests mock the API client — no real API calls. Run tests before committing.
 - Don't commit `.env`, `session.json`, or `*.skill` files
 - Don't hardcode country codes — use `getCountryCode()`
 
+## Releasing
+
+```bash
+npm version patch   # or minor, major
+git push && git push --tags
+```
+
+This triggers `.github/workflows/release.yml` which automatically:
+1. Runs tests (Node 22)
+2. Publishes to npm via Trusted Publishing (OIDC, no token needed)
+3. Publishes to ClawHub via `CLAWHUB_TOKEN` secret
+4. Creates a GitHub Release with auto-generated notes
+
+After release, update the local install: `npm run build && npm install -g .`
+
+The npm package is `@lucaperret/tidal-cli` (scope matches GitHub owner for Trusted Publishing). The old `@lucanova/tidal-cli` is deprecated.
+
+## Distribution
+
+| Channel | URL |
+|---------|-----|
+| npm | https://www.npmjs.com/package/@lucaperret/tidal-cli |
+| GitHub | https://github.com/lucaperret/tidal-cli |
+| ClawHub | https://clawhub.ai/lucaperret/tidal-cli |
+| Site | https://tidal-cli.lucaperret.ch |
+
 ## Related
 
-- Site: `site/` (Next.js, deployed to Vercel)
-- Skill: `skills/tidal-cli/SKILL.md` (OpenClaw)
+- Site: `site/` (Next.js, auto-deployed to Vercel on push)
+- Skill: `skills/tidal-cli/SKILL.md` (OpenClaw) — sync to `~/.openclaw/workspace/skills/tidal-cli/` for local testing
 - API reference: https://tidal-music.github.io/tidal-api-reference/tidal-api-oas.json
