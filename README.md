@@ -154,6 +154,16 @@ clawhub install tidal-cli
 
 After `tidal-cli auth`, agents can run commands non-interactively with auto-refreshing tokens.
 
+### Example prompts for your AI agent
+
+- "Create a playlist with the best tracks from Daft Punk's Discovery album"
+- "Find artists similar to Massive Attack and add their top tracks to my library"
+- "What are my playlists? Add the new LCD Soundsystem album to the first one"
+- "Play me something by Boards of Canada"
+- "Build a 2000s indie rock playlist with The Strokes, Arctic Monkeys, and Interpol"
+
+### Scripting patterns
+
 ```bash
 # Search then act
 TRACK=$(tidal-cli --json search track "Around the World" | jq -r '.[0].id')

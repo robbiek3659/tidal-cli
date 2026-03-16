@@ -217,6 +217,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI Prompts */}
+      <section className="py-32 px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-ai-pink/30 bg-ai-pink-dim px-4 py-1.5 mb-6">
+              <div className="w-2 h-2 rounded-full bg-ai-pink" />
+              <span className="text-xs font-mono text-ai-pink">
+                AI Agent
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold mb-4">
+              Just ask your agent
+            </h2>
+            <p className="text-tidal-gray-400 text-lg">
+              Tell your AI what you want. It handles the rest.
+            </p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {[
+              { prompt: "Create a playlist with the best tracks from Daft Punk's Discovery album", desc: "Searches, creates playlist, adds tracks" },
+              { prompt: "Find artists similar to Massive Attack and add their top tracks to my library", desc: "Discovers similar artists, adds to favorites" },
+              { prompt: "What are my playlists? Add the new LCD Soundsystem album to the first one", desc: "Lists playlists, searches album, adds tracks" },
+              { prompt: "Play me something by Boards of Canada", desc: "Searches, picks a track, plays it" },
+              { prompt: "Build a 2000s indie rock playlist with The Strokes, Arctic Monkeys, and Interpol", desc: "Multi-step: create, search, add tracks" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.08 }}
+                className="group rounded-xl border border-tidal-gray-700 bg-tidal-gray-900 p-5 hover:border-ai-pink/30 transition-colors"
+              >
+                <p className="text-white text-sm mb-1">{item.prompt}</p>
+                <p className="text-tidal-gray-400 text-xs italic">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Automation */}
       <section id="automation" className="py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(244,114,182,0.04)_0%,transparent_70%)]" />
