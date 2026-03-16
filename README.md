@@ -25,7 +25,7 @@ tidal-cli wraps the [Tidal API v2](https://developer.tidal.com) into a single co
 ## Installation
 
 ```bash
-npm install -g tidal-cli
+npm install -g @lucanova/tidal-cli
 ```
 
 ### Requirements

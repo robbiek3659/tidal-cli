@@ -1,10 +1,10 @@
 {
-  "name": "tidal-cli",
+  "name": "@lucanova/tidal-cli",
   "version": "1.0.0",
   "description": "CLI for Tidal music streaming service, designed for LLM agent automation",
   "main": "dist/index.js",
   "bin": {
-    "tidal-cli": "./dist/index.js"
+    "tidal-cli": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/lucaperret/tidal-cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucaperret/tidal-cli.git"
+    "url": "git+https://github.com/lucaperret/tidal-cli.git"
   },
   "bugs": {
     "url": "https://github.com/lucaperret/tidal-cli/issues"
@@ -40,7 +40,9 @@
     "node": ">=18"
   },
   "files": [
-    "dist",
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "!dist/__tests__",
     "README.md",
     "LICENSE"
   ],

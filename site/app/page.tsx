@@ -183,7 +183,7 @@ export default function Home() {
             <Terminal
               title="Installation"
               lines={[
-                { prompt: true, text: "npm install -g tidal-cli" },
+                { prompt: true, text: "npm install -g @lucanova/tidal-cli" },
                 { text: "" },
                 { text: "# Sign in with your Tidal account", dim: true },
                 { prompt: true, text: "tidal-cli auth" },
