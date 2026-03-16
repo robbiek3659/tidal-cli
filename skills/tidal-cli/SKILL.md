@@ -1,6 +1,16 @@
 ---
 name: tidal-cli
 description: "Control Tidal music streaming from the terminal. Use when the user wants to search Tidal's catalog (artists, albums, tracks, videos, playlists), manage playlists (create, rename, delete, add/remove tracks), manage library/favorites, play music, explore artist/track info, find similar artists or tracks, get personalized recommendations, or view user profile. Triggers on: music-related requests mentioning Tidal, playlist management, music search, 'play this song', 'add to my playlist', 'find this artist on Tidal', 'what playlists do I have', 'recommend me something', 'similar artists to'."
+metadata:
+  openclaw:
+    requires:
+      bins: ["tidal-cli"]
+    install:
+      - id: node
+        kind: node
+        package: "@lucanova/tidal-cli"
+        bins: ["tidal-cli"]
+        label: "Install tidal-cli (npm)"
 ---
 
 # tidal-cli
