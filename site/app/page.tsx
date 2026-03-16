@@ -46,12 +46,20 @@ export default function Home() {
                 Get Started
               </a>
               <a
+                href="https://clawhub.ai/lucaperret/tidal-cli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 rounded-lg border border-tidal-cyan/30 text-tidal-cyan font-semibold text-sm hover:border-tidal-cyan transition-colors"
+              >
+                Install on ClawHub
+              </a>
+              <a
                 href="https://github.com/lucaperret/tidal-cli"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 rounded-lg border border-tidal-gray-700 text-white font-semibold text-sm hover:border-tidal-gray-400 transition-colors"
               >
-                View on GitHub
+                GitHub
               </a>
             </div>
           </motion.div>
@@ -222,10 +230,15 @@ export default function Home() {
                 <code className="text-tidal-cyan text-sm bg-tidal-gray-800 px-1.5 py-0.5 rounded">
                   --json
                 </code>{" "}
-                output for machine-readable responses. Designed as an OpenClaw
-                skill, tidal-cli lets LLM agents search, curate playlists, and
+                output for machine-readable responses. Available as a skill on{" "}
+                <a href="https://clawhub.ai/lucaperret/tidal-cli" target="_blank" rel="noopener noreferrer" className="text-tidal-cyan hover:underline">ClawHub</a>,
+                tidal-cli lets LLM agents search, curate playlists, and
                 control playback programmatically.
               </p>
+              <div className="bg-tidal-gray-900 border border-tidal-gray-700 rounded-lg p-4 font-mono text-sm mb-6">
+                <span className="text-tidal-cyan/50 select-none">$ </span>
+                <span className="text-white">clawhub install tidal-cli</span>
+              </div>
               <ul className="space-y-3 text-sm text-tidal-gray-300">
                 <li className="flex items-center gap-3">
                   <span className="text-tidal-cyan">&#10003;</span>
@@ -241,7 +254,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-tidal-cyan">&#10003;</span>
-                  OpenClaw skill integration
+                  <a href="https://clawhub.ai/lucaperret/tidal-cli" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Available on ClawHub</a>
                 </li>
               </ul>
             </motion.div>
@@ -292,6 +305,14 @@ export default function Home() {
               className="text-sm text-tidal-gray-400 hover:text-white transition-colors"
             >
               Tidal Developer
+            </a>
+            <a
+              href="https://clawhub.ai/lucaperret/tidal-cli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-tidal-gray-400 hover:text-white transition-colors"
+            >
+              ClawHub
             </a>
             <a
               href="/privacy"

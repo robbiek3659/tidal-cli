@@ -27,10 +27,18 @@ export function Nav() {
             Automation
           </a>
           <a
-            href="https://github.com/lucaperret/tidal-cli"
+            href="https://clawhub.ai/lucaperret/tidal-cli"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-tidal-cyan hover:text-white transition-colors"
+          >
+            ClawHub
+          </a>
+          <a
+            href="https://github.com/lucaperret/tidal-cli"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-tidal-gray-400 hover:text-white transition-colors"
           >
             GitHub
           </a>

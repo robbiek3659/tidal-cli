@@ -144,7 +144,7 @@ export async function authenticate(): Promise<void> {
   <div class="cmd"><code><span class="prompt">$ </span>tidal-cli playback play 21844140</code><div class="desc">Play a track locally</div></div>
 
   <div class="footer">
-    <a href="https://github.com/lucaperret/tidal-cli">GitHub</a> &middot; Built for LLM agent automation
+    <a href="https://clawhub.ai/lucaperret/tidal-cli">ClawHub</a> &middot; <a href="https://github.com/lucaperret/tidal-cli">GitHub</a>
   </div>
 
 </div></body></html>`);

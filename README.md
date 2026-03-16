@@ -144,7 +144,13 @@ tidal-cli --json artist similar 8992
 
 ## Agent Automation
 
-tidal-cli is available as an [OpenClaw](https://openclaw.dev) skill. After `tidal-cli auth`, agents can run commands non-interactively with auto-refreshing tokens.
+tidal-cli is available as an [OpenClaw](https://openclaw.dev) skill on [ClawHub](https://clawhub.ai/lucaperret/tidal-cli). Install it for your AI agent:
+
+```bash
+clawhub install tidal-cli
+```
+
+After `tidal-cli auth`, agents can run commands non-interactively with auto-refreshing tokens.
 
 ```bash
 # Search then act
