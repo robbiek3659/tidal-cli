@@ -2,12 +2,14 @@
 
 Control Tidal from your terminal. Built for developers and AI agents.
 
+[![npm](https://img.shields.io/npm/v/@lucanova/tidal-cli)](https://www.npmjs.com/package/@lucanova/tidal-cli)
+[![CI](https://img.shields.io/github/actions/workflow/status/lucaperret/tidal-cli/ci.yml?label=tests)](https://github.com/lucaperret/tidal-cli/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D18-green.svg)](https://nodejs.org)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-green.svg)](https://nodejs.org)
 
 ## About
 
-tidal-cli wraps the [Tidal API v2](https://developer.tidal.com) into a single command-line tool. Search the catalog, manage playlists, explore artists, play tracks, and handle your library — all without opening a browser. Every command supports `--json` output, making it the backbone for LLM agent automation through [OpenClaw](https://openclaw.dev).
+tidal-cli wraps the [Tidal API v2](https://developer.tidal.com) into a single command-line tool. Search the catalog, manage playlists, explore artists, play tracks, and handle your library — all without opening a browser. Every command supports `--json` output, making it the backbone for LLM agent automation through [OpenClaw](https://openclaw.ai).
 
 ## Features
 
@@ -30,7 +32,7 @@ npm install -g @lucanova/tidal-cli
 
 ### Requirements
 
-- Node.js >= 18
+- Node.js >= 20
 - A [Tidal](https://tidal.com) account
 
 ## Quick Start
@@ -144,7 +146,7 @@ tidal-cli --json artist similar 8992
 
 ## Agent Automation
 
-tidal-cli is available as an [OpenClaw](https://openclaw.dev) skill on [ClawHub](https://clawhub.ai/lucaperret/tidal-cli). Install it for your AI agent:
+tidal-cli is available as an [OpenClaw](https://openclaw.ai) skill on [ClawHub](https://clawhub.ai/lucaperret/tidal-cli). Install it for your AI agent:
 
 ```bash
 clawhub install tidal-cli
