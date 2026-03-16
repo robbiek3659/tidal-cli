@@ -1,6 +1,10 @@
 # tidal-cli
 
-Control Tidal from your terminal. Built for developers and AI agents.
+<p align="center">
+  <a href="https://tidal-cli.lucaperret.ch">
+    <img src="https://tidal-cli.lucaperret.ch/banner" alt="tidal-cli — Control Tidal from your terminal" width="100%" />
+  </a>
+</p>
 
 [![npm](https://img.shields.io/npm/v/@lucanova/tidal-cli)](https://www.npmjs.com/package/@lucanova/tidal-cli)
 [![CI](https://img.shields.io/github/actions/workflow/status/lucaperret/tidal-cli/ci.yml?label=tests)](https://github.com/lucaperret/tidal-cli/actions)
