@@ -8,7 +8,7 @@ metadata:
     install:
       - id: node
         kind: node
-        package: "@lucanova/tidal-cli"
+        package: "@lucaperret/tidal-cli"
         bins: ["tidal-cli"]
         label: "Install tidal-cli (npm)"
 ---

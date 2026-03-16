@@ -26,7 +26,7 @@ jobs:
       id-token: write
     environment:
       name: npm
-      url: https://www.npmjs.com/package/@lucanova/tidal-cli
+      url: https://www.npmjs.com/package/@lucaperret/tidal-cli
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -48,12 +48,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm install -g clawhub
+      - run: clawhub auth login --token "${{ secrets.CLAWHUB_TOKEN }}" --no-browser
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
       - run: clawhub publish skills/tidal-cli --slug tidal-cli --name "Tidal CLI" --version ${{ steps.version.outputs.VERSION }}
-        env:
-          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
 
   github-release:
     needs: [publish-npm, publish-clawhub]
@@ -71,7 +70,7 @@ jobs:
 
             **npm:**
             ```bash
-            npm install -g @lucanova/tidal-cli
+            npm install -g @lucaperret/tidal-cli
             ```
 
             **OpenClaw skill:**

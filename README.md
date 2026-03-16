@@ -6,7 +6,7 @@
   </a>
 </p>
 
-[![npm](https://img.shields.io/npm/v/@lucanova/tidal-cli)](https://www.npmjs.com/package/@lucanova/tidal-cli)
+[![npm](https://img.shields.io/npm/v/@lucaperret/tidal-cli)](https://www.npmjs.com/package/@lucaperret/tidal-cli)
 [![CI](https://img.shields.io/github/actions/workflow/status/lucaperret/tidal-cli/ci.yml?label=tests)](https://github.com/lucaperret/tidal-cli/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-green.svg)](https://nodejs.org)
@@ -31,7 +31,7 @@ tidal-cli wraps the [Tidal API v2](https://developer.tidal.com) into a single co
 ## Installation
 
 ```bash
-npm install -g @lucanova/tidal-cli
+npm install -g @lucaperret/tidal-cli
 ```
 
 ### Requirements
