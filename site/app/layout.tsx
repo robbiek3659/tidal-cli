@@ -32,6 +32,68 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdSoftwareApplication = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "tidal-cli",
+  url: "https://tidal-cli.lucaperret.ch",
+  author: {
+    "@type": "Person",
+    name: "Luca Perret",
+    url: "https://lucaperret.ch",
+    sameAs: ["https://github.com/lucaperret"],
+  },
+  description:
+    "Command-line interface for Tidal music streaming. Designed for LLM agent automation.",
+  applicationCategory: "Music",
+  operatingSystem: "macOS, Linux, Windows",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+
+const jsonLdFaqPage = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I install tidal-cli?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Run `npm install -g @lucaperret/tidal-cli`, then `tidal-cli auth` to connect your Tidal account.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can tidal-cli be used with LLM agents?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, tidal-cli is designed for LLM agent automation. Install the skill via OpenClaw or skills.sh for seamless integration with Claude Code, Codex, and other AI coding agents.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is tidal-cli free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, tidal-cli is free and open-source under the MIT license. You need a Tidal subscription to access the music catalog.",
+      },
+    },
+  ],
+};
+
+const jsonLdPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Luca Perret",
+  url: "https://lucaperret.ch",
+  sameAs: ["https://github.com/lucaperret"],
+  jobTitle: "Software Engineer",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,6 +101,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="canonical" href="https://tidal-cli.lucaperret.ch/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdSoftwareApplication),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdFaqPage),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdPerson),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tidal-cli.lucaperret.ch/sitemap.xml
