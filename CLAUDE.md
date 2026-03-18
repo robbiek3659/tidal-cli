@@ -19,6 +19,7 @@ src/
 ├── index.ts       # CLI entry point (commander)
 ├── auth.ts        # OAuth, getApiClient(), getCountryCode()
 ├── session.ts     # localStorage/EventTarget polyfills for Node.js
+├── types.ts       # Shared types for *Data() functions
 ├── search.ts      # Search + suggestions
 ├── artist.ts      # Artist info, tracks, albums, similar, radio
 ├── track.ts       # Track info, similar, radio, ISRC lookup
@@ -30,6 +31,14 @@ src/
 ├── history.ts     # Recently added items
 ├── user.ts        # User profile
 └── __tests__/     # Vitest unit tests (111 tests)
+
+site/app/
+├── .well-known/oauth-authorization-server/  # OAuth metadata discovery
+├── api/authorize/   # OAuth authorize → redirects to Tidal
+├── api/callback/    # Tidal OAuth callback → stores tokens
+├── api/token/       # Token exchange (code → access token)
+├── api/mcp/         # MCP Streamable HTTP handler (32 tools)
+└── mcp-lib/         # Redis, Tidal OAuth, tool definitions, constants
 ```
 
 ## Commands
@@ -47,12 +56,24 @@ Tests mock the API client — no real API calls. Run tests before committing.
 
 ## Key Patterns
 
-- All commands use `getApiClient()` from `auth.ts`
-- All API calls use `await getCountryCode()` — never hardcode country
+- Each module has `*Data()` functions (return data, throw on error) and display wrappers (console.log + process.exit)
+- `*Data()` functions take `client` and `countryCode` as explicit params — reusable from both CLI and MCP server
+- CLI wrappers call `getApiClient()` and `getCountryCode()` then delegate to `*Data()`
 - Use `as any` for openapi-fetch typed params where the types don't match
 - Sort search results by `popularity` descending (except albums/playlists)
 - `--json` flag available on all commands via `getJson()` in index.ts
-- Error handling: `console.error()` + `process.exit(1)`
+- Error handling in CLI: `console.error()` + `process.exit(1)`. In `*Data()`: throw Error
+
+## MCP Server
+
+Remote MCP server hosted in `site/` (Next.js on Vercel) for Claude Connectors Directory.
+
+- **Transport**: Streamable HTTP via `mcp-handler` at `/api/mcp`
+- **Auth**: Double OAuth — server for MCP clients (Claude) + client for Tidal API
+- **Tokens**: Per-user Tidal tokens in Upstash Redis (env vars: `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`)
+- **Tools**: 32 tools with safety annotations (`readOnlyHint`, `destructiveHint`)
+- **Imports**: Tools import from compiled `dist/` (not `src/`) to avoid CJS/ESM mismatch with Turbopack
+- **Build dependency**: Run `npm run build` in root before building site
 
 ## Don't
 
@@ -90,6 +111,7 @@ The npm package is `@lucaperret/tidal-cli` (scope matches GitHub owner for Trust
 
 ## Related
 
-- Site: `site/` (Next.js, auto-deployed to Vercel on push)
+- Site + MCP: `site/` (Next.js, auto-deployed to Vercel on push)
 - Skill: `skills/tidal-cli/SKILL.md` (OpenClaw) — sync to `~/.openclaw/workspace/skills/tidal-cli/` for local testing
 - API reference: https://tidal-music.github.io/tidal-api-reference/tidal-api-oas.json
+- MCP endpoint: `https://tidal-cli.lucaperret.ch/api/mcp` (requires Upstash Redis env vars)
