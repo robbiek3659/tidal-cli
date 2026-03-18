@@ -6,15 +6,19 @@ const SESSION_DIR = path.join(os.homedir(), '.tidal-cli');
 const SESSION_FILE = path.join(SESSION_DIR, 'session.json');
 
 function ensureDir(): void {
-  if (!fs.existsSync(SESSION_DIR)) {
-    fs.mkdirSync(SESSION_DIR, { mode: 0o700 });
+  try {
+    if (!fs.existsSync(SESSION_DIR)) {
+      fs.mkdirSync(SESSION_DIR, { mode: 0o700 });
+    }
+  } catch {
+    // Serverless / read-only filesystem — skip
   }
 }
 
 export function loadStorage(): Record<string, string> {
-  ensureDir();
-  if (!fs.existsSync(SESSION_FILE)) return {};
   try {
+    ensureDir();
+    if (!fs.existsSync(SESSION_FILE)) return {};
     return JSON.parse(fs.readFileSync(SESSION_FILE, 'utf-8'));
   } catch {
     return {};
@@ -22,8 +26,12 @@ export function loadStorage(): Record<string, string> {
 }
 
 export function saveStorage(data: Record<string, string>): void {
-  ensureDir();
-  fs.writeFileSync(SESSION_FILE, JSON.stringify(data, null, 2), { mode: 0o600 });
+  try {
+    ensureDir();
+    fs.writeFileSync(SESSION_FILE, JSON.stringify(data, null, 2), { mode: 0o600 });
+  } catch {
+    // Serverless / read-only filesystem — skip
+  }
 }
 
 /**

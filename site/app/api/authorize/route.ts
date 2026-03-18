@@ -18,10 +18,13 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  // Validate redirect_uri against allowlist
-  const isAllowed = ALLOWED_REDIRECT_URIS.some(
-    (allowed) => redirectUri === allowed || redirectUri.startsWith(allowed),
-  );
+  // Validate redirect_uri — allow Claude callbacks and localhost for dev
+  const url = new URL(redirectUri);
+  const isAllowed =
+    url.hostname === 'claude.ai' ||
+    url.hostname === 'claude.com' ||
+    url.hostname === 'localhost' ||
+    url.hostname === '127.0.0.1';
   if (!isAllowed) {
     return NextResponse.json(
       { error: 'invalid_request', error_description: 'redirect_uri not allowed' },
