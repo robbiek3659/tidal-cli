@@ -18,11 +18,13 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  // Validate redirect_uri — allow Claude callbacks and localhost for dev
+  // Validate redirect_uri — allow known MCP clients
   const url = new URL(redirectUri);
   const isAllowed =
     url.hostname === 'claude.ai' ||
     url.hostname === 'claude.com' ||
+    url.hostname === 'chatgpt.com' ||
+    url.hostname.endsWith('.openai.com') ||
     url.hostname === 'api.smithery.ai' ||
     url.hostname === 'localhost' ||
     url.hostname === '127.0.0.1';
